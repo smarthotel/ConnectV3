@@ -6,7 +6,6 @@ location=westeurope
 resourcegroup=development-dev-rg
 topicname=connect-dev-v3
 cloudname=DEV
-queuename=sb-dev-event
 crsendpoint=https://development.smarthotel.nl/connect/bizzcrs
 payendpoint=https://development.smarthotel.nl/connect/bizzpay
 postifcendpoint=https://development.smarthotel.nl/connect/postifc
