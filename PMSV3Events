@@ -1,10 +1,13 @@
 # Set variables
+
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Louvre
+
 topicname=pmsv3
 cloudname=PMS
+
 crsendpoint=https://pms-bizz-crs.azurewebsites.net
 payendpoint=https://pms-bizz-pay.azurewebsites.net
 postifcendpoint=https://pms-post-ifc.azurewebsites.net
@@ -82,14 +85,14 @@ az eventgrid event-subscription create \
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostReservationCommit \
+  --name CrsPostIFCCommit \
   --endpoint $postifcendpoint \
   --included-event-types "$cloudname.IFCCommit.Requested"
   
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostReservationCommit \
+  --name CrsPostPMSCommit \
   --endpoint $postpmsendpoint \
   --included-event-types "$cloudname.PMSCommit.Requested"
 
