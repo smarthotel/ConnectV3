@@ -3,8 +3,10 @@ subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Louvre
+
 topicname=louvrev3
 cloudname=Louvre
+
 crsendpoint=https://louvre-bizz-crs.azurewebsites.net
 payendpoint=https://louvre-bizz-pay.azurewebsites.net
 postifcendpoint=https://louvre-post-ifc.azurewebsites.net
