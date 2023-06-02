@@ -4,8 +4,10 @@ subscription=development
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=development-dev-rg
+
 topicname=connect-dev-v3
 cloudname=DEV
+
 crsendpoint=https://development.smarthotel.nl/connect/bizzcrs
 payendpoint=https://development.smarthotel.nl/connect/bizzpay
 postifcendpoint=https://development.smarthotel.nl/connect/postifc
