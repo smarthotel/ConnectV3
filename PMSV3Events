@@ -3,7 +3,7 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-resourcegroup=Louvre
+resourcegroup=PMS
 
 topicname=pmsv3
 cloudname=PMS
