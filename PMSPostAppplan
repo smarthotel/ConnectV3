@@ -2,8 +2,10 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
+
 resourcegroup=PMS
 appplan=pms-post-asp
+
 ifcservice=pms-post-ifc
 pmsservice=pms-post-pms
 payservice=pms-post-pay
