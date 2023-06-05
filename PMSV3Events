@@ -117,14 +117,12 @@ az eventgrid event-subscription create \
   --endpoint $postpmsendpoint \
   --included-event-types "$cloudname.Result.Requested"
 
-if [ $topicname = 'pms' ]; then
-  az eventgrid event-subscription create \
-    --output none \
-    --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-    --name CrsGuestRegistrationRequested \
-    --endpoint $postifcendpoint \
-    --included-event-types "$cloudname.Registration.Requested"
-fi
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsGuestRegistrationRequested \
+  --endpoint $postifcendpoint \
+  --included-event-types "$cloudname.Registration.Requested"
 
 # Create Payment prepared event subscriptions
 echo "Create Payment prepared event subscriptions in $topicname"
