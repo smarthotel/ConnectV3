@@ -3,9 +3,10 @@ subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Oracle
+
 appplan=oracle-post-asp
-ifcservice=oracle-post-ifc
-pmsservice=oracle-post-pms
+
+crsservice=oracle-post-crs
 payservice=oracle-post-pay
 
 #Set active subscription
@@ -14,21 +15,14 @@ az account set --subscription $subscription
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$ifcservice hostingPlanName=$appplan
-  
-az deployment group create \
-  --resource-group $resourcegroup \
-  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$pmsservice hostingPlanName=$appplan
+  --parameters siteName=$crsservice hostingPlanName=$appplan
   
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
   --parameters siteName=$payservice hostingPlanName=$appplan
   
-az webapp deployment slot create --name $ifcservice --resource-group $resourcegroup --slot deployment
-
-az webapp deployment slot create --name $pmsservice --resource-group $resourcegroup --slot deployment
+az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
 
 az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
   
