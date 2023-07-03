@@ -6,31 +6,23 @@ location=westeurope
 resourcegroup=Inntel
 appplan=inntel-post-asp
 
-ifcservice=inntel-post-ifc
-pmsservice=inntel-post-pms
+crsservice=inntel-post-crs
 payservice=inntel-post-pay
 
 #Set active subscription
 az account set --subscription $subscription
-
+ 
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$ifcservice hostingPlanName=$appplan
-  
-az deployment group create \
-  --resource-group $resourcegroup \
-  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$pmsservice hostingPlanName=$appplan
+  --parameters siteName=$crsservice hostingPlanName=$appplan
   
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
   --parameters siteName=$payservice hostingPlanName=$appplan
   
-az webapp deployment slot create --name $ifcservice --resource-group $resourcegroup --slot deployment
-
-az webapp deployment slot create --name $pmsservice --resource-group $resourcegroup --slot deployment
+az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
 
 az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
   
