@@ -249,6 +249,13 @@ az eventgrid event-subscription create \
   --name PayPostChargeRequested \
   --endpoint $postpayendpoint \
   --included-event-types "$cloudname.Charge.Requested"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name PayPostAutoChargeRequested \
+  --endpoint $postpayendpoint \
+  --included-event-types "$cloudname.AutoCharge.Requested"
   
 az eventgrid event-subscription create \
   --output none \
