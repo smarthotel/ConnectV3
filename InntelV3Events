@@ -9,8 +9,7 @@ cloudname=Inntel
 
 crsendpoint=https://inntel-bizz-crs.azurewebsites.net
 payendpoint=https://inntel-bizz-pay.azurewebsites.net
-postifcendpoint=https://inntel-post-ifc.azurewebsites.net
-postpmsendpoint=https://inntel-post-pms.azurewebsites.net
+postcrsendpoint=https://inntel-post-crs.azurewebsites.net
 postpayendpoint=https://inntel-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
 getendpoint=https://connect-get.azurewebsites.net
