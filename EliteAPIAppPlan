@@ -6,7 +6,7 @@ location=westeurope
 resourcegroup=Elite
 appplan=elite-api-asp
 
-apiservice=elite-api
+apiservice=elite-apiv3
 
 #Set active subscription
 az account set --subscription $subscription
