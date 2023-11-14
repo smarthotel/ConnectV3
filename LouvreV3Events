@@ -2,7 +2,7 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-resourcegroup=Elite
+resourcegroup=Louvre
 
 topicname=louvrev3
 cloudname=Louvre
