@@ -42,6 +42,13 @@ az eventgrid event-subscription create \
   --name CrsGetResultRequired \
   --endpoint $getendpoint \
   --included-event-types "$cloudname.CRSResult.Required"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsGetInventoryRequired \
+  --endpoint $getendpoint \
+  --included-event-types "$cloudname.Inventory.Required"
   
 # Create CRS event subscriptions
 echo "Create CRS event subscriptions in $topicname"
