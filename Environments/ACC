@@ -1,0 +1,27 @@
+# Set variables
+
+subscription=development
+subscriptionId="$(az account show --query id -o tsv)"
+location=westeurope
+resourcegroup=acceptance-dev-rg
+
+topicname=connect-acc-v3
+cloudname=ACC
+
+crsendpoint=https://acceptance.smarthotel.nl/connect/bizzcrs
+payendpoint=https://acceptance.smarthotel.nl/connect/bizzpay
+postcrsendpoint=https://acceptance.smarthotel.nl/connect/postcrs
+postpayendpoint=https://acceptance.smarthotel.nl/connect/postpay
+dataendpoint=https://acceptance.smarthotel.nl/connect/dataview/log
+getendpoint=https://acceptance.smarthotel.nl/connect/get
+
+#Set active subscription
+az account set --subscription $subscription
+
+# Delete existing eventgrid topic
+# echo "Delete topic $topicname"
+# az eventgrid topic delete -g $resourcegroup --name $topicname
+
+# Create eventgrid topic
+# echo "Create topic $topicname"
+# az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
