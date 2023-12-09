@@ -24,3 +24,19 @@ az account set --subscription $subscription
 # Create eventgrid topic
 # echo "Create topic $topicname"
 # az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
+
+# Create GET event subscriptions
+echo "Create GET event subscriptions in $topicname"
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsGetResultRequired \
+  --endpoint $getendpoint \
+  --included-event-types "$cloudname.CRSResult.Required"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsGetInventoryRequired \
+  --endpoint $getendpoint \
+  --included-event-types "$cloudname.Inventory.Required"
