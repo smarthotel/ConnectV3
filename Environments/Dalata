@@ -1,0 +1,27 @@
+# Set variables
+subscription=smartconnect
+subscriptionId="$(az account show --query id -o tsv)"
+location=westeurope
+resourcegroup=Dalata
+
+topicname=dalatav3
+cloudname=Dalata
+
+crsendpoint=https://dalata-bizz-crs.azurewebsites.net
+payendpoint=https://dalata-bizz-pay.azurewebsites.net
+postifcendpoint=https://dalata-post-ifc.azurewebsites.net
+postpmsendpoint=https://dalata-post-pms.azurewebsites.net
+postpayendpoint=https://dalata-post-pay.azurewebsites.net
+dataendpoint=https://connect-data-v2.azurewebsites.net/log
+getendpoint=https://connect-get.azurewebsites.net
+
+#Set active subscription
+az account set --subscription $subscription
+
+# Delete existing eventgrid topic
+# echo "Delete topic $topicname"
+# az eventgrid topic delete -g $resourcegroup --name $topicname
+
+# Create eventgrid topic
+# echo "Create topic $topicname"
+# az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
