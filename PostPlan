@@ -3,7 +3,6 @@ subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 cloud=pms
-
 resourcegroup=PMS
 
 appplan=$cloud-post-asp
