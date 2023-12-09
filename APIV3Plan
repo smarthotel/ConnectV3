@@ -2,11 +2,11 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-
+cloud=pms
 resourcegroup=PMS
-appplan=pms-api-asp
 
-apiservice=pms-apiv3
+appplan=$cloud-api-asp
+apiservice=$cloud-apiv3
 
 #Set active subscription
 az account set --subscription $subscription
