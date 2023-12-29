@@ -144,6 +144,13 @@ az eventgrid event-subscription create \
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name PayBizzPushProcessed \
+  --endpoint $payendpoint \
+  --included-event-types "$cloudname.Push.Processed"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name PayBizzChargeProcessed \
   --endpoint $payendpoint \
   --included-event-types "$cloudname.Charge.Processed"
