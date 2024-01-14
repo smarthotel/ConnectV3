@@ -2,8 +2,8 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=pms
-resourcegroup=PMS
+cloud=dalata
+resourcegroup=Dalata
 
 appplan=$cloud-api-asp
 apiservice=$cloud-apiv3
