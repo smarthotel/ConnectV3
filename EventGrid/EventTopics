@@ -12,9 +12,30 @@ echo "Create CRS event subscriptions in $topicname"
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzBusinessPrepared \
+  --name CrsBizzInventoryPrepared \
   --endpoint $crsendpoint \
-  --included-event-types "$cloudname.Business.Prepared"
+  --included-event-types "$cloudname.Inventory.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsBizzRatePrepared \
+  --endpoint $batchendpoint \
+  --included-event-types "$cloudname.Rate.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsBizzRulePrepared \
+  --endpoint $batchendpoint \
+  --included-event-types "$cloudname.Rule.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CrsBizzBatchPrepared \
+  --endpoint $batchendpoint \
+  --included-event-types "$cloudname.Batch.Prepared"
   
 az eventgrid event-subscription create \
   --output none \
