@@ -14,7 +14,7 @@ payendpoint=https://acceptance.smarthotel.nl/connect/bizzpayv3
 postcrsendpoint=https://acceptance.smarthotel.nl/connect/postcrs
 postpayendpoint=https://acceptance.smarthotel.nl/connect/postpay
 dataendpoint=https://acceptance.smarthotel.nl/connect/dataview/log
-getendpoint=https://acceptance.smarthotel.nl/connect/get
+getendpoint=https://acceptance.smarthotel.nl/connect/getv3
 
 #Set active subscription
 az account set --subscription $subscription
