@@ -8,6 +8,7 @@ resourcegroup=PMS
 appplan=$cloud-bizzv3-asp
 
 crsservice=$cloud-bizzv3-crs
+batchservice=$cloud-bizzv3-batch
 payservice=$cloud-bizzv3-pay
 
 #Set active subscription
@@ -21,9 +22,16 @@ az deployment group create \
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$batchservice hostingPlanName=$appplan
+
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
   --parameters siteName=$payservice hostingPlanName=$appplan
   
 az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
+
+az webapp deployment slot create --name $batchservice --resource-group $resourcegroup --slot deployment
 
 az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
   
