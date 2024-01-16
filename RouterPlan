@@ -1,1 +1,20 @@
+# Set variables
+subscription=smartconnect
+subscriptionId="$(az account show --query id -o tsv)"
+location=westeurope
+cloud=api
+resourcegroup=Router
 
+appplan=$cloud-router-asp
+
+apiservice=$cloud-routerv3
+
+#Set active subscription
+az account set --subscription $subscription
+ 
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$apiservice hostingPlanName=$appplan
+
+az webapp deployment slot create --name $apiservice --resource-group $resourcegroup --slot deployment
