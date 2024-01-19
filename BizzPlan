@@ -2,8 +2,8 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=pms
-resourcegroup=PMS
+cloud=elite
+resourcegroup=Elite
 
 appplan=$cloud-bizzv3-asp
 
