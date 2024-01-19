@@ -7,9 +7,9 @@ resourcegroup=Elite
 topicname=elitev3
 cloudname=Elite
 
-crsendpoint=https://pms-bizzv3-crs.azurewebsites.net
-batchendpoint=https://pms-bizzv3-batch.azurewebsites.net
-payendpoint=https://pms-bizzv3-pay.azurewebsites.net
+crsendpoint=https://elite-bizzv3-crs.azurewebsites.net
+batchendpoint=https://elite-bizzv3-batch.azurewebsites.net
+payendpoint=https://elite-bizzv3-pay.azurewebsites.net
 postcrsendpoint=https://elite-post-crs.azurewebsites.net
 postpayendpoint=https://elite-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
