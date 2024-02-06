@@ -7,8 +7,9 @@ resourcegroup=Louvre
 topicname=louvrev3
 cloudname=Louvre
 
-crsendpoint=https://louvre-bizz-crs.azurewebsites.net
-payendpoint=https://louvre-bizz-pay.azurewebsites.net
+crsendpoint=https://louvre-bizzv3-crs.azurewebsites.net
+batchendpoint=https://louvre-bizzv3-batch.azurewebsites.net
+payendpoint=https://louvre-bizzv3-pay.azurewebsites.net
 postcrsendpoint=https://app-louvre-post.azurewebsites.net
 postpayendpoint=https://louvre-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
