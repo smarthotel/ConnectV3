@@ -7,8 +7,9 @@ resourcegroup=Dalata
 topicname=dalatav3
 cloudname=Dalata
 
-crsendpoint=https://dalata-bizz-crs.azurewebsites.net
-payendpoint=https://dalata-bizz-pay.azurewebsites.net
+crsendpoint=https://dalata-bizzv3-crs.azurewebsites.net
+batchendpoint=https://dalata-bizzv3-batch.azurewebsites.net
+payendpoint=https://dalata-bizzv3-pay.azurewebsites.net
 postcrsendpoint=https://dalata-post-crs.azurewebsites.net
 postpayendpoint=https://dalata-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
@@ -19,8 +20,8 @@ az account set --subscription $subscription
 
 # Delete existing eventgrid topic
 # echo "Delete topic $topicname"
-# az eventgrid topic delete -g $resourcegroup --name $topicname
+az eventgrid topic delete -g $resourcegroup --name $topicname
 
 # Create eventgrid topic
 # echo "Create topic $topicname"
-# az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
+az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
