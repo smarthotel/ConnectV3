@@ -277,3 +277,61 @@ az eventgrid event-subscription create \
   --name PayGetReportRequired \
   --endpoint $getendpoint \
   --included-event-types "$cloudname.Report.Required"
+
+# Create Maintenance event subscriptions
+echo "Create Maintenance event subscriptions in $topicname"
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name RolloverMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.Rollover.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name PurgeLogMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.PurgeLog.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name RolloverMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.Rollover.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CleanupMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.Cleanup.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name FixQueueMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.FixQueue.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CheckResMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.CheckRes.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name FixResMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.FixRes.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name FixPushMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.FixPush.Maintenance"
