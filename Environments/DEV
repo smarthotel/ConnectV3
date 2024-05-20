@@ -15,6 +15,7 @@ postcrsendpoint=https://development.smarthotel.nl/connect/postcrs
 postpayendpoint=https://development.smarthotel.nl/connect/postpay
 dataendpoint=https://development.smarthotel.nl/connect/dataview/log
 getendpoint=https://development.smarthotel.nl/connect/getv3
+jobendpoint=https://development.smarthotel.nl/connect/maintenance
 
 #Set active subscription
 az account set --subscription $subscription
