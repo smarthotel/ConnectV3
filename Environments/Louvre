@@ -14,6 +14,7 @@ postcrsendpoint=https://app-louvre-post.azurewebsites.net
 postpayendpoint=https://louvre-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
 getendpoint=https://app-louvre-get.azurewebsites.net
+jobendpoint=https://louvre-maintenance.azurewebsites.net
 
 #Set active subscription
 az account set --subscription $subscription
