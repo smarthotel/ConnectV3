@@ -14,6 +14,7 @@ postcrsendpoint=https://oracle-post-crs.azurewebsites.net
 postpayendpoint=https://oracle-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
 getendpoint=https://connect-getv3.azurewebsites.net
+jobendpoint=https://oracle-maintenance.azurewebsites.net
 
 #Set active subscription
 az account set --subscription $subscription
