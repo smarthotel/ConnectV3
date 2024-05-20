@@ -11,4 +11,9 @@ apiservice=$cloud-maintenance
 #Set active subscription
 az account set --subscription $subscription
 
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$apiservice hostingPlanName=$appplan
+
 az webapp deployment slot create --name $apiservice --resource-group $resourcegroup --slot deployment
