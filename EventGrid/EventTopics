@@ -297,13 +297,6 @@ az eventgrid event-subscription create \
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name RolloverMaintenance \
-  --endpoint $jobendpoint \
-  --included-event-types "$cloudname.Rollover.Maintenance"
-
-az eventgrid event-subscription create \
-  --output none \
-  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name CleanupMaintenance \
   --endpoint $jobendpoint \
   --included-event-types "$cloudname.Cleanup.Maintenance"
