@@ -1,0 +1,14 @@
+# Set variables
+subscription=smartconnect
+subscriptionId="$(az account show --query id -o tsv)"
+location=westeurope
+cloud=inntel
+resourcegroup=Inntel
+
+appplan=$cloud-monitor-asp
+apiservice=$cloud-maintenance
+
+#Set active subscription
+az account set --subscription $subscription
+
+az webapp deployment slot create --name $apiservice --resource-group $resourcegroup --slot deployment
