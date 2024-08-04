@@ -2,11 +2,11 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=dalata
-resourcegroup=Dalata
+cloud=oracle
+resourcegroup=Oracle
 
-appplan=$cloud-api-asp
-apiservice=$cloud-apiv3
+appplan=$cloud-rms-api-asp
+apiservice=$cloud-rms-apiv3
 
 #Set active subscription
 az account set --subscription $subscription
