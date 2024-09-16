@@ -1,0 +1,28 @@
+# Set variables
+subscription=smartconnect
+subscriptionId="$(az account show --query id -o tsv)"
+location=westeurope
+resourcegroup=Lapland
+
+topicname=laplandv3
+cloudname=Lapland
+
+crsendpoint=https://lapland-bizzv3-crs.azurewebsites.net
+batchendpoint=https://lapland-bizzv3-batch.azurewebsites.net
+payendpoint=https://lapland-bizzv3-pay.azurewebsites.net
+postcrsendpoint=https://lapland-post-crs.azurewebsites.net
+postpayendpoint=https://lapland-post-pay.azurewebsites.net
+dataendpoint=https://connect-data-v2.azurewebsites.net/log
+getendpoint=https://connect-getv3.azurewebsites.net
+jobendpoint=https://lapland-maintenance.azurewebsites.net
+
+#Set active subscription
+az account set --subscription $subscription
+
+# Delete existing eventgrid topic
+echo "Delete topic $topicname"
+az eventgrid topic delete -g $resourcegroup --name $topicname
+
+# Create eventgrid topic
+echo "Create topic $topicname"
+az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
