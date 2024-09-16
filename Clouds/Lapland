@@ -5,11 +5,11 @@ location=westeurope
 cloud=lapland
 resourcegroup=Lapland
 
-appplan=$cloud-api-asp
-apiservice=$cloud-apiv3
-
 #Set active subscription
 az account set --subscription $subscription
+
+appplan=$cloud-api-asp
+apiservice=$cloud-apiv3
  
 az deployment group create \
   --resource-group $resourcegroup \
@@ -17,3 +17,49 @@ az deployment group create \
   --parameters siteName=$apiservice hostingPlanName=$appplan
 
 az webapp deployment slot create --name $apiservice --resource-group $resourcegroup --slot deployment
+
+appplan=$cloud-bizzv3-asp
+
+crsservice=$cloud-bizzv3-crs
+batchservice=$cloud-bizzv3-batch
+payservice=$cloud-bizzv3-pay
+
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$crsservice hostingPlanName=$appplan
+  
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$batchservice hostingPlanName=$appplan
+
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$payservice hostingPlanName=$appplan
+  
+az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
+
+az webapp deployment slot create --name $batchservice --resource-group $resourcegroup --slot deployment
+
+az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
+
+appplan=$cloud-post-asp
+
+crsservice=$cloud-post-crs
+payservice=$cloud-post-pay
+
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$crsservice hostingPlanName=$appplan
+  
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$payservice hostingPlanName=$appplan
+
+az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
+
+az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
