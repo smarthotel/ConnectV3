@@ -328,3 +328,10 @@ az eventgrid event-subscription create \
   --name FixPushMaintenance \
   --endpoint $jobendpoint \
   --included-event-types "$cloudname.FixPush.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name CalendarMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.Calendar.Maintenance"
