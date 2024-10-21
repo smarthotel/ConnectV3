@@ -2,8 +2,8 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=inntel
-resourcegroup=Inntel
+cloud=lapland
+resourcegroup=Lapland
 
 appplan=$cloud-monitor-asp
 apiservice=$cloud-monitor
