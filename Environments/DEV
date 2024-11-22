@@ -23,8 +23,8 @@ az account set --subscription $subscription
 
 # Delete existing eventgrid topic
 # echo "Delete topic $topicname"
-az eventgrid topic delete -g $resourcegroup --name $topicname
+# az eventgrid topic delete -g $resourcegroup --name $topicname
 
 # Create eventgrid topic
 # echo "Create topic $topicname"
-eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
+az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
