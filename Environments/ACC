@@ -8,9 +8,10 @@ resourcegroup=acceptance-dev-rg
 topicname=accv3
 cloudname=ACC
 
-crsendpoint=https://staging.smarthotel.nl/bizzcrsv3
-batchendpoint=https://staging.smarthotel.nl/bizzbatch
-payendpoint=https://staging.smarthotel.nl/bizzpayv3
+invendpoint=https://staging.smarthotel.nl/bizzinv
+rateendpoint=https://staging.smarthotel.nl/bizzrate
+ruleendpoint=https://staging.smarthotel.nl/bizzrule
+payendpoint=https://staging.smarthotel.nl/bizzpay
 postcrsendpoint=https://staging.smarthotel.nl/postcrs
 postpayendpoint=https://staging.smarthotel.nl/postpay
 dataendpoint=https://staging.smarthotel.nl/dataview/log
