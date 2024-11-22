@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Lapland
 
-topicname=laplandv3
+topicname=lapland
 cloudname=Lapland
 
-crsendpoint=https://lapland-bizzv3-crs.azurewebsites.net
-batchendpoint=https://lapland-bizzv3-batch.azurewebsites.net
-payendpoint=https://lapland-bizzv3-pay.azurewebsites.net
+invendpoint=https://lapland-inv.azurewebsites.net
+rateendpoint=https://lapland-rate.azurewebsites.net
+ruleendpoint=https://lapland-rate.azurewebsites.net
+payendpoint=https://lapland-pay.azurewebsites.net
 postcrsendpoint=https://lapland-post-crs.azurewebsites.net
 postpayendpoint=https://lapland-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
