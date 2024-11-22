@@ -342,3 +342,10 @@ az eventgrid event-subscription create \
   --name CalendarMaintenance \
   --endpoint $jobendpoint \
   --included-event-types "$cloudname.Calendar.Maintenance"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name InventoryMaintenance \
+  --endpoint $jobendpoint \
+  --included-event-types "$cloudname.Inventory.Maintenance"
