@@ -5,7 +5,7 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=development-dev-rg
 
-topicname=dev
+topicname=devv4
 cloudname=DEV
 
 invendpoint=https://development.smarthotel.nl/connect/bizzinv
