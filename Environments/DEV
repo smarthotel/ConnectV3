@@ -8,9 +8,10 @@ resourcegroup=development-dev-rg
 topicname=devv3
 cloudname=DEV
 
-crsendpoint=https://development.smarthotel.nl/connect/bizzcrsv3
-batchendpoint=https://development.smarthotel.nl/connect/bizzbatch
-payendpoint=https://development.smarthotel.nl/connect/bizzpayv3
+invendpoint=https://development.smarthotel.nl/connect/bizzinv
+rateendpoint=https://development.smarthotel.nl/connect/bizzrate
+ruleendpoint=https://development.smarthotel.nl/connect/bizzrule
+payendpoint=https://development.smarthotel.nl/connect/bizzpay
 postcrsendpoint=https://development.smarthotel.nl/connect/postcrs
 postpayendpoint=https://development.smarthotel.nl/connect/postpay
 dataendpoint=https://development.smarthotel.nl/connect/dataview/log
