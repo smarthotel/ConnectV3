@@ -7,89 +7,96 @@ az eventgrid event-subscription create \
   --endpoint $dataendpoint \
   --included-event-types "$cloudname.PurgeLog.Requested"
 
-# Create CRS event subscriptions
-echo "Create CRS event subscriptions in $topicname"
+# Create Business event subscriptions
+echo "Create Business event subscriptions in $topicname"
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzInventoryPrepared \
-  --endpoint $crsendpoint \
+  --name InventoryPrepared \
+  --endpoint $invendpoint \
   --included-event-types "$cloudname.Inventory.Prepared"
 
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzRatePrepared \
-  --endpoint $batchendpoint \
+  --name RatePrepared \
+  --endpoint $rateendpoint \
   --included-event-types "$cloudname.Rate.Prepared"
 
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzRulePrepared \
-  --endpoint $batchendpoint \
+  --name RateBatchPrepared \
+  --endpoint $rateendpoint \
+  --included-event-types "$cloudname.RateBatch.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name RulePrepared \
+  --endpoint $ruleendpoint \
   --included-event-types "$cloudname.Rule.Prepared"
 
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzBatchPrepared \
-  --endpoint $batchendpoint \
-  --included-event-types "$cloudname.Batch.Prepared"
-  
+  --name RuleBatchPrepared \
+  --endpoint $ruleendpoint \
+  --included-event-types "$cloudname.RuleBatch.Prepared"
+
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsBizzRefreshPrepared \
-  --endpoint $crsendpoint \
+  --name RefreshPrepared \
+  --endpoint $jobendpoint \
   --included-event-types "$cloudname.Refresh.Prepared"
 
-# Create CRS Post event subscriptions
-echo "Create CRS Post event subscriptions in $topicname"
+# Create Post event subscriptions
+echo "Create Post event subscriptions in $topicname"
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostARIRequested \
+  --name PostARIRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.ARIPost.Requested"
   
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostBatchRequested \
+  --name BatchRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.ARIBatch.Requested"
     
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostReservationRequested \
+  --name ReservationRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.Reservation.Requested"
       
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostCommitRequested \
+  --name CommitRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.Commit.Requested"
         
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostReservationPush \
+  --name ReservationPush \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.Push.Requested"
 
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
-  --name CrsPostResultRequested \
+  --name ResultRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.Result.Requested"
 
-# Create Payment prepared event subscriptions
-echo "Create Payment prepared event subscriptions in $topicname"
+# Create Payment event subscriptions
+echo "Create Payment event subscriptions in $topicname"
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
