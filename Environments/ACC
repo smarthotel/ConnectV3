@@ -5,7 +5,7 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=acceptance-dev-rg
 
-topicname=accv3
+topicname=accv4
 cloudname=ACC
 
 invendpoint=https://staging.smarthotel.nl/bizzinv
