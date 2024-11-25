@@ -4,12 +4,12 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Lapland
 
-topicname=lapland
+topicname=laplandv4
 cloudname=Lapland
 
 invendpoint=https://lapland-inv.azurewebsites.net
 rateendpoint=https://lapland-rate.azurewebsites.net
-ruleendpoint=https://lapland-rate.azurewebsites.net
+ruleendpoint=https://lapland-rule.azurewebsites.net
 payendpoint=https://lapland-pay.azurewebsites.net
 postcrsendpoint=https://lapland-post-crs.azurewebsites.net
 postpayendpoint=https://lapland-post-pay.azurewebsites.net
@@ -22,7 +22,7 @@ az account set --subscription $subscription
 
 # Delete existing eventgrid topic
 echo "Delete topic $topicname"
-az eventgrid topic delete -g $resourcegroup --name $topicname
+# az eventgrid topic delete -g $resourcegroup --name $topicname
 
 # Create eventgrid topic
 echo "Create topic $topicname"
