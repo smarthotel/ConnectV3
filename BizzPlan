@@ -2,13 +2,14 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=louvre
-resourcegroup=Louvre
+cloud=lapland
+resourcegroup=Lapland
 
 appplan=$cloud-bizz-asp
 
-crsservice=$cloud-bizz-crs
-batchservice=$cloud-bizz-batch
+invservice=$cloud-bizz-inv
+rateservice=$cloud-bizz-rate
+ruleservice=$cloud-bizz-rule
 payservice=$cloud-bizz-pay
 
 #Set active subscription
@@ -17,21 +18,28 @@ az account set --subscription $subscription
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$crsservice hostingPlanName=$appplan
+  --parameters siteName=$invservice hostingPlanName=$appplan
   
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
-  --parameters siteName=$batchservice hostingPlanName=$appplan
+  --parameters siteName=$rateservice hostingPlanName=$appplan
+
+az deployment group create \
+  --resource-group $resourcegroup \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
+  --parameters siteName=$ruleservice hostingPlanName=$appplan
 
 az deployment group create \
   --resource-group $resourcegroup \
   --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/appservice.json" \
   --parameters siteName=$payservice hostingPlanName=$appplan
   
-az webapp deployment slot create --name $crsservice --resource-group $resourcegroup --slot deployment
+az webapp deployment slot create --name $invservice --resource-group $resourcegroup --slot deployment
 
-az webapp deployment slot create --name $batchservice --resource-group $resourcegroup --slot deployment
+az webapp deployment slot create --name $rateservice --resource-group $resourcegroup --slot deployment
+
+az webapp deployment slot create --name $ruleservice --resource-group $resourcegroup --slot deployment
 
 az webapp deployment slot create --name $payservice --resource-group $resourcegroup --slot deployment
   
