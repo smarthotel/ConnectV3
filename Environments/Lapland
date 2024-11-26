@@ -7,10 +7,10 @@ resourcegroup=Lapland
 topicname=laplandv4
 cloudname=Lapland
 
-invendpoint=https://lapland-inv.azurewebsites.net
-rateendpoint=https://lapland-rate.azurewebsites.net
-ruleendpoint=https://lapland-rule.azurewebsites.net
-payendpoint=https://lapland-pay.azurewebsites.net
+invendpoint=https://lapland-bizz-inv.azurewebsites.net
+rateendpoint=https://lapland-bizz-rate.azurewebsites.net
+ruleendpoint=https://lapland-bizz-rule.azurewebsites.net
+payendpoint=https://lapland-bizz-pay.azurewebsites.net
 postcrsendpoint=https://lapland-post-crs.azurewebsites.net
 postpayendpoint=https://lapland-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
