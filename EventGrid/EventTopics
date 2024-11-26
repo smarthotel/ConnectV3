@@ -91,6 +91,13 @@ az eventgrid event-subscription create \
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name ConfirmationPush \
+  --endpoint $postcrsendpoint \
+  --included-event-types "$cloudname.Confirmation.Requested"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name ResultRequested \
   --endpoint $postcrsendpoint \
   --included-event-types "$cloudname.Result.Requested"
