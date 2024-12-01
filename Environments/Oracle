@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Oracle
 
-topicname=oraclev3
+topicname=oraclev4
 cloudname=Oracle
 
-crsendpoint=https://oracle-bizzv3-crs.azurewebsites.net
-batchendpoint=https://oracle-bizzv3-batch.azurewebsites.net
-payendpoint=https://oracle-bizzv3-pay.azurewebsites.net
+invendpoint=https://oracle-bizz-inv.azurewebsites.net
+rateendpoint=https://oracle-bizz-rate.azurewebsites.net
+ruleendpoint=https://oracle-bizz-rule.azurewebsites.net
+payendpoint=https://oracle-bizz-pay.azurewebsites.net
 postcrsendpoint=https://oracle-post-crs.azurewebsites.net
 postpayendpoint=https://oracle-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
