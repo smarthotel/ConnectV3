@@ -2,8 +2,8 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=dalata
-resourcegroup=Dalata
+cloud=louvre
+resourcegroup=Louvre
 
 appplan=$cloud-bizz-asp
 
