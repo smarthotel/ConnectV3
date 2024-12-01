@@ -4,11 +4,12 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Louvre
 
-topicname=louvrev3
+topicname=louvrev4
 cloudname=Louvre
 
-crsendpoint=https://louvre-bizzv3-crs.azurewebsites.net
-batchendpoint=https://louvre-bizzv3-batch.azurewebsites.net
+invendpoint=https://louvre-bizz-inv.azurewebsites.net
+rateendpoint=https://louvre-bizz-rate.azurewebsites.net
+ruleendpoint=https://louvre-bizz-rule.azurewebsites.net
 payendpoint=https://louvre-bizzv3-pay.azurewebsites.net
 postcrsendpoint=https://app-louvre-post.azurewebsites.net
 postpayendpoint=https://louvre-post-pay.azurewebsites.net
