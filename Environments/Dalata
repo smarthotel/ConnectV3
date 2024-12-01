@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Dalata
 
-topicname=dalatav3
+topicname=dalatav4
 cloudname=Dalata
 
-crsendpoint=https://dalata-bizzv3-crs.azurewebsites.net
-batchendpoint=https://dalata-bizzv3-batch.azurewebsites.net
-payendpoint=https://dalata-bizzv3-pay.azurewebsites.net
+invendpoint=https://dalata-bizz-inv.azurewebsites.net
+rateendpoint=https://dalata-bizz-rate.azurewebsites.net
+ruleendpoint=https://dalata-bizz-rule.azurewebsites.net
+payendpoint=https://dalata-bizz-pay.azurewebsites.net
 postcrsendpoint=https://dalata-post-crs.azurewebsites.net
 postpayendpoint=https://dalata-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
