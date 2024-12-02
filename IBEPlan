@@ -5,7 +5,7 @@ location=westeurope
 cloud=oracle
 resourcegroup=Oracle
 
-appplan=$cloud-ibe-asp
+appplan=connect-ibe-asp
 
 apiservice=$cloud-ibeapi
 
