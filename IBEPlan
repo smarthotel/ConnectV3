@@ -2,7 +2,7 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=pms
+cloud=louvre
 resourcegroup=SHARED
 
 appplan=connect-ibe-asp
