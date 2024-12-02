@@ -3,7 +3,7 @@ subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 cloud=oracle
-resourcegroup=Oracle
+resourcegroup=SHARED
 
 appplan=connect-ibe-asp
 
