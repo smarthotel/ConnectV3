@@ -2,8 +2,8 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=louvre
-resourcegroup=Louvre
+cloud=elite
+resourcegroup=Elite
 
 appplan=$cloud-bizz-asp
 
