@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Elite
 
-topicname=elitev3
+topicname=elitev4
 cloudname=Elite
 
-crsendpoint=https://elite-bizzv3-crs.azurewebsites.net
-batchendpoint=https://elite-bizzv3-batch.azurewebsites.net
-payendpoint=https://elite-bizzv3-pay.azurewebsites.net
+invendpoint=https://elite-bizz-inv.azurewebsites.net
+rateendpoint=https://elite-bizz-rate.azurewebsites.net
+ruleendpoint=https://elite-bizz-rule.azurewebsites.net
+payendpoint=https://elite-bizz-pay.azurewebsites.net
 postcrsendpoint=https://elite-post-crs.azurewebsites.net
 postpayendpoint=https://elite-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
@@ -21,8 +22,8 @@ az account set --subscription $subscription
 
 # Delete existing eventgrid topic
 # echo "Delete topic $topicname"
-# az eventgrid topic delete -g $resourcegroup --name $topicname
+az eventgrid topic delete -g $resourcegroup --name $topicname
 
 # Create eventgrid topic
 # echo "Create topic $topicname"
-# az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
+az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
