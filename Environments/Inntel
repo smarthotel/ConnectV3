@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=Inntel
 
-topicname=inntelv3
+topicname=inntelv4
 cloudname=Inntel
 
-crsendpoint=https://inntel-bizzv3-crs.azurewebsites.net
-batchendpoint=https://inntel-bizzv3-batch.azurewebsites.net
-payendpoint=https://inntel-bizzv3-pay.azurewebsites.net
+invendpoint=https://inntel-bizz-inv.azurewebsites.net
+rateendpoint=https://inntel-bizz-rate.azurewebsites.net
+ruleendpoint=https://inntel-bizz-rule.azurewebsites.net
+payendpoint=https://inntel-bizz-pay.azurewebsites.net
 postcrsendpoint=https://inntel-post-crs.azurewebsites.net
 postpayendpoint=https://inntel-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
