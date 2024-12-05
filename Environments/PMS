@@ -4,12 +4,13 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=PMS
 
-topicname=pmsv3
+topicname=pmsv4
 cloudname=PMS
 
-crsendpoint=https://pms-bizzv3-crs.azurewebsites.net
-batchendpoint=https://pms-bizzv3-batch.azurewebsites.net
-payendpoint=https://pms-bizzv3-pay.azurewebsites.net
+invendpoint=https://pms-bizz-inv.azurewebsites.net
+rateendpoint=https://pms-bizz-rate.azurewebsites.net
+ruleendpoint=https://pms-bizz-rule.azurewebsites.net
+payendpoint=https://pms-bizz-pay.azurewebsites.net
 postcrsendpoint=https://pms-post-crs.azurewebsites.net
 postpayendpoint=https://pms-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
