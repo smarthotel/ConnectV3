@@ -2,13 +2,13 @@
 subscription=smartconnect
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-cloud=oracle
-resourcegroup=Oracle
+cloud=valk
+resourcegroup=Valk
 
 appplan=$cloud-rms-post-asp
 
-crsservice=$cloud-rms-post-crs
-payservice=$cloud-rms-post-pay
+crsservice=$cloud-post-crs
+payservice=$cloud-post-pay
 
 #Set active subscription
 az account set --subscription $subscription
