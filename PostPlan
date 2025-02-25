@@ -5,7 +5,7 @@ location=westeurope
 cloud=valk
 resourcegroup=Valk
 
-appplan=$cloud-rms-post-asp
+appplan=$cloud-post-asp
 
 crsservice=$cloud-post-crs
 payservice=$cloud-post-pay
