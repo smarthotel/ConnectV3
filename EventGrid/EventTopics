@@ -12,6 +12,13 @@ echo "Create Business event subscriptions in $topicname"
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name HybridPrepared \
+  --endpoint $invendpoint \
+  --included-event-types "$cloudname.Hybrid.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name InventoryPrepared \
   --endpoint $invendpoint \
   --included-event-types "$cloudname.Inventory.Prepared"
