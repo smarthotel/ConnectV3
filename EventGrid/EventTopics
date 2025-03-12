@@ -19,6 +19,13 @@ az eventgrid event-subscription create \
 az eventgrid event-subscription create \
   --output none \
   --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name HybridBatchPrepared \
+  --endpoint $invendpoint \
+  --included-event-types "$cloudname.HybridBatch.Prepared"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name InventoryPrepared \
   --endpoint $invendpoint \
   --included-event-types "$cloudname.Inventory.Prepared"
