@@ -181,6 +181,13 @@ az eventgrid event-subscription create \
   --endpoint $payendpoint \
   --included-event-types "$cloudname.Checkout.Prepared"
 
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name PayBizzTokenPrepared \
+  --endpoint $payendpoint \
+  --included-event-types "$cloudname.Token.Prepared"
+
 # Create Payment processed event subscriptions
 echo "Create Payment processed event subscriptions in $topicname"
 az eventgrid event-subscription create \
@@ -275,6 +282,13 @@ az eventgrid event-subscription create \
   --name PayPostStatusRequested \
   --endpoint $postpayendpoint \
   --included-event-types "$cloudname.Status.Requested"
+
+az eventgrid event-subscription create \
+  --output none \
+  --source-resource-id "/subscriptions/$subscriptionId/resourceGroups/$resourcegroup/providers/Microsoft.EventGrid/topics/$topicname" \
+  --name PayPostTokenRequested \
+  --endpoint $postpayendpoint \
+  --included-event-types "$cloudname.Token.Requested"
 
 az eventgrid event-subscription create \
   --output none \
