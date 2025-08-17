@@ -3,7 +3,7 @@
 subscription=development
 subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
-resourcegroup=development-dev-rg
+resourcegroup=rg-smart-connect-dev
 
 topicname=devlinux
 cloudname=DEV
