@@ -20,3 +20,7 @@ jobendpoint=https://connect-dev-maintenance.azurewebsites.net
 
 #Set active subscription
 az account set --subscription $subscription
+
+# Create eventgrid topic
+# echo "Create topic $topicname"
+az eventgrid topic create --name $topicname -l $location -g $resourcegroup --output none
