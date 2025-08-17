@@ -5,7 +5,7 @@ subscriptionId="$(az account show --query id -o tsv)"
 location=westeurope
 resourcegroup=development-dev-rg
 
-topicname=devv4
+topicname=devlinux
 cloudname=DEV
 
 invendpoint=https://connect-dev-bizz-inv.azurewebsites.net
