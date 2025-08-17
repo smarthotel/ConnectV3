@@ -1,0 +1,8 @@
+subscription=Development
+subscriptionId="$(az account show --query id -o tsv)"
+az account set --subscription $subscription
+
+az deployment group create \
+  --resource-group rg-smart-connect-dev \
+  --template-uri "https://raw.githubusercontent.com/smarthotel/armrepo/master/linux.json" \
+  --parameters appName=connect-dev-post-crs
