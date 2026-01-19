@@ -11,10 +11,10 @@ invendpoint=https://louvre-bizz-inv.azurewebsites.net
 rateendpoint=https://louvre-bizz-rate.azurewebsites.net
 ruleendpoint=https://louvre-bizz-rule.azurewebsites.net
 payendpoint=https://louvre-bizz-pay.azurewebsites.net
-postcrsendpoint=https://app-louvre-post.azurewebsites.net
+postcrsendpoint=https://louvre-post-crs.azurewebsites.net
 postpayendpoint=https://louvre-post-pay.azurewebsites.net
 dataendpoint=https://connect-data-v2.azurewebsites.net/log
-getendpoint=https://app-louvre-get.azurewebsites.net
+getendpoint=https://connect-getv3.azurewebsites.net
 jobendpoint=https://louvre-maintenance.azurewebsites.net
 
 #Set active subscription
